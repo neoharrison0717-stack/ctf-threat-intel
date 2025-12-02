@@ -1,1 +1,3 @@
-- diff sample
+--- a/file
++++ b/file
+@@ fake diff @@

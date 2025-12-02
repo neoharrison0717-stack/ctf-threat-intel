@@ -1,38 +1,13 @@
-\# Solution — Challenge 02: Supply Chain DLL Tampering
+# Solution — Challenge 02: NightQuartz Alias Attribution
 
+## What You Were Supposed to Find
+The earlier alias of NightQuartz on CitadelBay.
 
+## How to Solve
+1. Examine `nightquartz_forum_dump.txt` for writing style and posting times.
+2. Check `tor_marketplace_backup.json` for reused PGP keys.
+3. Compare timezone correlations in `timezone_correlation.csv`.
+4. Combine clues to determine the historical alias.
 
-\## What You Were Supposed to Find
-
-One DLL was replaced with a trojanized version in the installation directory of a vendor software package.
-
-
-
-\## How to Solve
-
-1\. Review `file\_manifest.json` and compare hashes.
-
-2\. Identify mismatch for:
-
-telemetry\_core.dll
-
-3\. Hash in `telemetry\_core.dll.hash` does NOT match the vendor-signed hash in manifest.
-
-4\. Open `incident\_log.txt` — shows unauthorized write events during update window.
-
-5\. `diff.txt` shows added suspicious export:
-
-Export: InitShadowChannel
-
-
-
-\## Reasoning
-
-Hash mismatch + added exports are strong indicators of tampering.
-
-
-
-\## Expected Flag
-
-flag{dll\_supply\_chain\_tamper\_detected}
-
+## Expected Flag
+flag{darkscribe}

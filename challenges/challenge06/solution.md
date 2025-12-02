@@ -1,36 +1,13 @@
-\# Solution — Challenge 06: Ransomware Precursor Activity
+# Solution — Challenge 06: Pine Shade Mobile Threat
 
+## What You Were Supposed to Find
+The threat actor group responsible.
 
+## How to Solve
+1. Review `developer_comments.txt` for linguistic clues.
+2. Inspect `apk_manifest.xml` for developer/packaging anomalies.
+3. Compare `linguistic_profile_samples.txt` with known actor quirks.
+4. Check `server_tls_scan.json` for unique TLS patterns.
 
-\## What You Were Supposed to Find
-
-The adversary used PsExec-style lateral movement before deploying ransomware.
-
-
-
-\## How to Solve
-
-1\. In `eventlogs.evtxt\_export.txt`, search for service creation events (Event 7045).
-
-2\. Spot suspicious service:
-
-psexecsvc\_temp
-
-3\. `netlogon.txt` shows failed and successful logins from host `ENG-SRV-12`.
-
-4\. `timeline.csv` reveals the sequence:
-
-Recon → Credential access → Lateral tool deployment.
-
-
-
-\## Reasoning
-
-These behaviors are classic ransomware staging.
-
-
-
-\## Expected Flag
-
-flag{psexec\_lateral\_move\_chain}
-
+## Expected Flag
+flag{pine_shade}

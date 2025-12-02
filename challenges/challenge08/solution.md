@@ -1,34 +1,13 @@
-\# Solution — Challenge 08: Reverse-Engineering a Fake Malware Sample
+# Solution — Challenge 08: Supply Chain Dependency Graph
 
+## What You Were Supposed to Find
+The central malicious NPM package.
 
+## How to Solve
+1. Analyze `dependency_graph.json` for package relationships.
+2. Use `package_hashes.csv` to find duplicate hashes.
+3. Check `npm_user_profiles.txt` and `ci_workflow_samples.yml` for patterns.
+4. Identify the central node feeding the entire chain.
 
-\## What You Were Supposed to Find
-
-The binary is a benign mock sample, but contains an embedded string revealing the command keyword.
-
-
-
-\## How to Solve
-
-1\. Open `strings\_output.txt`.
-
-2\. Search for structured keywords — find:
-
-CMD\_TRIGGER\_ALPHA
-
-3\. In `analysis\_notes.txt`, see reference to unused function `parseAlphaTrigger()`.
-
-4\. `manifest.yaml` shows the compiled time intentionally randomized.
-
-
-
-\## Reasoning
-
-Hidden string indicators are often used in beginner-friendly RE challenges.
-
-
-
-\## Expected Flag
-
-flag{cmd\_trigger\_alpha}
-
+## Expected Flag
+flag{evil-pkg-core}

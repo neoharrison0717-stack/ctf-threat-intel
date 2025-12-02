@@ -1,1 +1,1 @@
-tls scan
+Fingerprint: AA:BB:CC

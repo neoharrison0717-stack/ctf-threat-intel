@@ -1,2 +1,6 @@
-domain,ip,ttl,status
-example1.com,10.0.0.1,30,A
+timestamp,domain,query_type,answer
+2025-01-01,alpha-hydra.com,A,192.168.101.42
+2025-01-01,beta-hydra.com,A,192.168.101.42
+2025-01-01,gamma-hydra.com,A,192.168.101.42
+2025-01-01,delta-hydra.com,A,192.168.101.42
+2025-01-01,epsilon-hydra.com,A,192.168.101.42

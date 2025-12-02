@@ -1,34 +1,12 @@
-\# Solution — Challenge 03: OSINT Infrastructure Mapping
+# Solution — Challenge 03: Git Compromise Forensics
 
+## What You Were Supposed to Find
+The attacker's local timezone.
 
+## How to Solve
+1. Analyze `git_reflog_extract.json` for timezone offsets in timestamps.
+2. Compare with `commit_log.txt` and `refs_heads_master.bak`.
+3. Use the metadata in `malicious_patch.diff` for confirmation.
 
-\## What You Were Supposed to Find
-
-Threat actor infrastructure pivoting from a GitHub account to VPS hosting and staging domains.
-
-
-
-\## How to Solve
-
-1\. Use `profile\_screenshot.png` to note the GitHub username: `ZeroPointResearch`.
-
-2\. Look at `forks.json` — one repository contains a domain listed in comments:
-
-logrelay-sync\[.]net
-
-3\. `whois.txt` shows the domain registered using ProtonMail alias seen on the GitHub profile.
-
-4\. `notes.txt` provides a leaked handle “zpr\_ops”.
-
-
-
-\## Reasoning
-
-Pivoting through social connections + reused aliases performs attribution.
-
-
-
-\## Expected Flag
-
-flag{osint\_linked\_zpr\_ops\_infra}
-
+## Expected Flag
+flag{UTC+3}

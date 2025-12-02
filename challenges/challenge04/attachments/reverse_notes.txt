@@ -1,1 +1,1 @@
-notes
+Beacon uses jitter between 10 and 45s.

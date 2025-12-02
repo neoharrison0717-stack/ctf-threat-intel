@@ -1,34 +1,13 @@
-\# Solution — Challenge 05: Insider Data Exfiltration
+# Solution — Challenge 05: Orchid Ledger PDF Analysis
 
+## What You Were Supposed to Find
+The malware builder family used to create the embedded payload.
 
+## How to Solve
+1. Check `pdf_metadata.json` for unusual creator/editor fields.
+2. Analyze `pdf_strings.txt` for patterns matching known builders.
+3. Examine `embedded_js_obf.js` for obfuscation style.
+4. Refer to `heuristic_report.txt` for confirmation.
 
-\## What You Were Supposed to Find
-
-A user uploaded confidential files to an unapproved cloud storage provider.
-
-
-
-\## How to Solve
-
-1\. `proxy\_logs.txt` — search for large POST requests.
-
-2\. Identify uploads to:
-
-drive-share-sync\[.]io/upload
-
-3\. `access\_times.csv` shows late-night access.
-
-4\. `audit\_result.json` lists the user `m.teller` with classification violations.
-
-
-
-\## Reasoning
-
-Pattern matches insider exfil via cloud storage.
-
-
-
-\## Expected Flag
-
-flag{insider\_cloud\_exfil\_m\_teller}
-
+## Expected Flag
+flag{orchidbuilder}
